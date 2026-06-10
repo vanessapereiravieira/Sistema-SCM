@@ -174,6 +174,7 @@ mysql -u root -p scm < database/scm.sql
 
 6️⃣ Configurar variáveis de ambiente (.env)
 
+```bash
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua_senha
@@ -182,6 +183,7 @@ DB_PORT=3306
 
 SESSION_SECRET=sua_chave_secreta
 PORT=3000
+```
 
 7️⃣ Rodar o servidor
 
@@ -231,6 +233,6 @@ Após importar o banco de dados (scm.sql), o sistema já vem com usuários pré-
 ---
 
 👨‍💻 Equipe
-Back-End: Vanessa Pereira
-Front-End: Iedro Lucas
-Documentação: Maivily Nascimento
+- Back-End: Vanessa Pereira
+- Front-End: Iedro Lucas
+- Documentação: Maivily Nascimento
