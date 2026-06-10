@@ -51,12 +51,12 @@ npm install
 ----
 
 🧱 Dependências utilizadas no projeto
-. express (^5.2.1) → servidor backend
-. mysql2 (^3.22.3) → conexão com banco de dados MySQL
-. dotenv (^17.4.2) → variáveis de ambiente (.env)
-. cors (^2.8.6) → comunicação entre frontend e backend
-. express-session (^1.19.0) → autenticação por sessão
-. multer (^2.1.1) → upload de arquivos
+- express (^5.2.1) → servidor backend
+- mysql2 (^3.22.3) → conexão com banco de dados MySQL
+- dotenv (^17.4.2) → variáveis de ambiente (.env)
+- cors (^2.8.6) → comunicação entre frontend e backend
+- express-session (^1.19.0) → autenticação por sessão
+- multer (^2.1.1) → upload de arquivos
 
 ---
 
