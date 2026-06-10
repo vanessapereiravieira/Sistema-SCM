@@ -5,6 +5,14 @@ O sistema permite que funcionários registrem chamados e que a equipe administra
 
 ----
 
+## 📄 Documentação
+
+📘  A documentação completa do SCM está disponível online.
+
+👉 [Acessar documentação no Google Drive](https://drive.google.com/drive/folders/1FAwXFIWUjDsPRLjZ5PA9q1dyt7JpO5Cm?usp=sharing)
+
+----
+
 🚀 Funcionalidades
 
 👤 Usuário
@@ -46,30 +54,35 @@ Frontend
 As dependências do projeto já estão definidas no arquivo package.json.
 Para instalar todas automaticamente, execute dentro da pasta backend:
 
-</> Bash
+
+```bash
 npm install
+```
+
 ----
 
 🧱 Dependências utilizadas no projeto
-. express (^5.2.1) → servidor backend
-. mysql2 (^3.22.3) → conexão com banco de dados MySQL
-. dotenv (^17.4.2) → variáveis de ambiente (.env)
-. cors (^2.8.6) → comunicação entre frontend e backend
-. express-session (^1.19.0) → autenticação por sessão
-. multer (^2.1.1) → upload de arquivos
+- express (^5.2.1) → servidor backend
+- mysql2 (^3.22.3) → conexão com banco de dados MySQL
+- dotenv (^17.4.2) → variáveis de ambiente (.env)
+- cors (^2.8.6) → comunicação entre frontend e backend
+- express-session (^1.19.0) → autenticação por sessão
+- multer (^2.1.1) → upload de arquivos
 
 ---
 
 ⚙️ Instalação manual
 
-</> Bash
+
+```bash
 npm install express mysql2 dotenv cors express-session multer
+```
+
 ---
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
-SCM
-│
+```bash
 ├── backend
 │   ├── config
 │   ├── middlewares
@@ -105,6 +118,7 @@ SCM
 │   └── scm.sql
 │
 └── README.md
+```
 
 ---
 
@@ -112,35 +126,45 @@ SCM
 
 1️⃣ Clonar o repositório
 
-</> Bash
+```bash
 git clone https://github.com/vanessapereiravieira/Sistema-SCM.git
+```
+
 -----
 
 2️⃣ Acessar o projeto
 
-</> Bash
+```bash
 cd Sistema-SCM
+```
+
 ----
 
 3️⃣ Instalar dependências do backend
 
-</> Bash
+```bash
 cd backend
 npm install
+```
 -----
 
 ⚙️ Configuração do banco de dados (MySQL)
 
 4️⃣ Criar o banco de dados
 
-</> SQL
+```bash
 CREATE DATABASE scm;
+```
+
 ----
 
 5️⃣ Importar o arquivo .sql
 
 ✔️ Terminal:
-- mysql -u root -p scm < database/scm.sql
+
+```bash
+mysql -u root -p scm < database/scm.sql
+```
 
 ✔️ MySQL Workbench:
 - Server > Data Import
@@ -149,6 +173,7 @@ CREATE DATABASE scm;
 - Start Import
 
 6️⃣ Configurar variáveis de ambiente (.env)
+
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua_senha
@@ -160,8 +185,10 @@ PORT=3000
 
 7️⃣ Rodar o servidor
 
-</> Bash
+```bash
 node server.js
+```
+
 ----
 
 8️⃣ Acessar o sistema
