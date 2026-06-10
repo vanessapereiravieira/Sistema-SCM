@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCM - Login</title>
+    <link rel="stylesheet" href="../../styles/login/login.css">
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+    
+    <div class="container">
+        <div class="left-side">
+            <div class="form-wrapper">
+                <div class="logo">
+                    <h2>SCM</h2>
+                    <span>Sistema de Controle e Manutenção</span>
+                </div>
+
+                <div class="user-type-selector">
+                    <button class="type-btn active" data-type="admin">
+                        Administrador
+                    </button>
+                    <button class="type-btn" data-type="user">
+                        Usuário
+                    </button>
+                </div>
+
+                <form id="loginForm" action="/api/login" method="POST">
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="sua senha" required>
+                    </div>
+
+                    <button type="submit" class="btn-login">Entrar</button>
+                </form>
+
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img src="../../images/mulherengenheira.png" alt="Engenheira" class="engineer-image">
+        </div>
+    </div>
+
+    <label for="theme-toggle" class="theme-toggle-btn">
+        <span class="theme-text">Modo</span>
+    </label>
+    
+    <script src="../../js/login/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SCM - Nova Manutenção</title>
+    <link rel="stylesheet" href="../../styles/perfil-user/nova_manutencao_user.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <h2>SCM</h2>
+        <span>Sistema de Controle e Manutenção</span>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="../perfil-admin/home_admin.html" class="nav-item">Home</a>
+        <a href="../perfil-admin/dashboard.html" class="nav-item">Dashboard</a>
+        <a href="../perfil-admin/novo_chamado_admin.html" class="nav-item">Novo chamado</a>
+        <a href="../perfil-admin/meus_chamados_admin.html" class="nav-item">Meus chamados</a>
+        <a href="../perfil-admin/chamados_encaminhados_admin.html" class="nav-item">Chamados enviados</a>
+        <a href="../perfil-admin/nova_manutencao_admin.html" class="nav-item active">Nova manutenção</a>
+        <a href="../perfil-admin/minhas_manutencoes_admin.html" class="nav-item">Minhas manutenções</a>
+        <a href="../perfil-admin/manutencoes_encaminhadas_admin.html" class="nav-item">Manutenções enviadas</a>
+        <a href="../perfil-admin/sobre_admin.html" class="nav-item">Sobre</a>
+        <a href="../perfil-admin/faq_admin.html" class="nav-item">FAQ / Ajuda</a>
+    </nav>
+    
+    <div class="theme-toggle-wrapper">
+        <button class="theme-toggle-btn" id="themeToggleBtn">Modo</button>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="top-bar">
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="mobile-logo">SCM</div>
+        </div>
+        
+        <button class="profile-btn" id="profileBtn">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                </svg>
+            </div>
+        </button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item logout" id="logoutBtn">Sair</div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="content-area">
+        <div class="page-title">Nova Manutenção</div>
+
+        <div class="form-container">
+            <form id="manutencaoForm" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Equipamento <span class="required">*</span></label>
+                        <input type="text" id="equipamento" placeholder="Ex: Ar Condicionado, Nobreak, Impressora..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Responsável <span class="required">*</span></label>
+                        <input type="text" id="responsavel" placeholder="Nome do responsável pela manutenção" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipo de local <span class="required">*</span></label>
+                        <select id="localTipo" required>
+                            <option value="" disabled selected>Selecione o tipo de local</option>
+                            <option value="sala">Sala</option>
+                            <option value="laboratorio">Laboratório</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="nomeSalaGroup" style="display: none;">
+                        <label for="nomeSala" id="nomeSalaLabel">Número da sala *</label>
+                        <select id="nomeSala" name="nomeSala" required>
+                            <option value="" disabled selected>Selecione a sala</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Categoria <span class="required">*</span></label>
+                        <select id="categoria" required>
+                            <option value="" disabled selected>Selecione a categoria</option>
+                            <option value="TI">TI</option>
+                            <option value="NEP">NEP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Periodicidade <span class="required">*</span></label>
+                        <select id="periodicidade" required>
+                            <option value="" disabled selected>Selecione a periodicidade</option>
+                            <option value="semanal">Semanal</option>
+                            <option value="mensal">Mensal</option>
+                            <option value="trimestral">Trimestral</option>
+                            <option value="semestral">Semestral</option>
+                            <option value="anual">Anual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Data da última manutenção <span class="required">*</span></label>
+                        <input type="date" id="dataUltima" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data da próxima manutenção <span class="required">*</span></label>
+                        <input type="date" id="dataProxima" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nível de Urgência <span class="required">*</span></label>
+                        <select id="urgencia" required>
+                            <option value="" disabled selected>Selecione a urgência</option>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Imagem do equipamento <span class="required">*</span></label>
+                        <input type="file" id="imagem" accept="image/*">
+                        <small style="display: block; margin-top: 5px; color: #666;">Formatos: JPG, PNG, GIF (max. 5MB)</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Observações</label>
+                    <textarea id="observacoes" placeholder="Informações adicionais sobre a manutenção, instruções específicas, etc..." rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="toastMsg" class="toast-message"></div>
+
+<!-- SCRIPTS -->
+<script src="../../js/funcoes-base/base.js"></script>
+<script src="../../js/perfil-admin/nova_manutencao_admin.js"></script>
+
+</body>
+</html>

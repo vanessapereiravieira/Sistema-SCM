@@ -1,0 +1,748 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Checkbox escondido */
+.theme-checkbox {
+    display: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botão de alternar tema */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-text {
+    display: inline-block;
+}
+
+/* ========== TEMA CLARO (PADRÃO) ========== */
+body {
+    background: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.left-side {
+    flex: 1;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo h2 {
+    font-size: 32px;
+    color: #1a3a6e;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.logo span {
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.user-type-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    padding: 5px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.type-btn.active {
+    background: #1a3a6e;
+    color: white;
+    box-shadow: 0 5px 15px rgba(26, 58, 110, 0.3);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    background: white;
+    color: #333;
+}
+
+.input-group input:focus {
+    border-color: #1a3a6e;
+    box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #1a3a6e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-login:hover {
+    background: #0d2242;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(26, 58, 110, 0.3);
+}
+
+.right-side {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a3a6e 0%, #0d2242 100%);
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.engineer-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.error-message {
+    text-align: center;
+    margin-top: 15px;
+    color: #e74c3c;
+    font-size: 14px;
+    min-height: 40px;
+}
+
+.theme-toggle-btn {
+    background: #1a3a6e;
+    color: white;
+    border: none;
+}
+
+.theme-toggle-btn:hover {
+    background: #0d2242;
+    transform: scale(1.05);
+}
+
+/* ========== TEMA ESCURO (COM AZUL MAIS ESCURO) ========== */
+.theme-checkbox:checked ~ .container,
+.theme-checkbox:checked ~ .container .left-side {
+    background: #1a2332;
+}
+
+.theme-checkbox:checked ~ .container .logo h2 {
+    color: #3a7cb8;
+}
+
+.theme-checkbox:checked ~ .container .logo span {
+    color: #aaa;
+}
+
+.theme-checkbox:checked ~ .container .user-type-selector {
+    background: #2a3448;
+}
+
+.theme-checkbox:checked ~ .container .type-btn {
+    color: #aaa;
+}
+
+.theme-checkbox:checked ~ .container .type-btn.active {
+    background: #2a5f8a;
+    color: white;
+    box-shadow: 0 5px 15px rgba(42, 95, 138, 0.3);
+}
+
+.theme-checkbox:checked ~ .container .input-group label {
+    color: #ddd;
+}
+
+.theme-checkbox:checked ~ .container .input-group input {
+    border: 2px solid #2a3448;
+    background: #2a3448;
+    color: #fff;
+}
+
+.theme-checkbox:checked ~ .container .input-group input:focus {
+    border-color: #2a5f8a;
+    box-shadow: 0 0 0 3px rgba(42, 95, 138, 0.2);
+}
+
+.theme-checkbox:checked ~ .container .input-group input::placeholder {
+    color: #888;
+}
+
+.theme-checkbox:checked ~ .container .btn-login {
+    background: #2a5f8a;
+}
+
+.theme-checkbox:checked ~ .container .btn-login:hover {
+    background: #1e4566;
+    box-shadow: 0 10px 20px rgba(42, 95, 138, 0.3);
+}
+
+.theme-checkbox:checked ~ .container .right-side {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b2a3f 100%);
+}
+
+/* Botão no tema escuro */
+.theme-checkbox:checked ~ .theme-toggle-btn {
+    background: #2a5f8a;
+    color: white;
+}
+
+.theme-checkbox:checked ~ .theme-toggle-btn:hover {
+    background: #1e4566;
+}
+
+/* ========== RESPONSIVIDADE HORIZONTAL PERFEITA ========== */
+
+/* Desktop padrão (acima de 1200px) */
+@media (min-width: 1200px) {
+    .left-side {
+        padding: 60px;
+    }
+    
+    .form-wrapper {
+        max-width: 450px;
+    }
+    
+    .engineer-image {
+        max-width: 75%;
+    }
+}
+
+/* Desktop médio (1024px a 1200px) */
+@media (max-width: 1200px) {
+    .left-side {
+        padding: 50px;
+    }
+    
+    .form-wrapper {
+        max-width: 400px;
+    }
+    
+    .logo h2 {
+        font-size: 30px;
+    }
+    
+    .engineer-image {
+        max-width: 75%;
+    }
+}
+
+/* Tablets e telas médias (768px a 1024px) - Mantém 50%/50% */
+@media (max-width: 1024px) {
+    .left-side {
+        padding: 40px 30px;
+    }
+    
+    .right-side {
+        padding: 20px;
+    }
+    
+    .form-wrapper {
+        max-width: 380px;
+    }
+    
+    .logo h2 {
+        font-size: 28px;
+    }
+    
+    .logo span {
+        font-size: 13px;
+    }
+    
+    .logo {
+        margin-bottom: 30px;
+    }
+    
+    .user-type-selector {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .type-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+    
+    .btn-login {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .engineer-image {
+        max-width: 70%;
+    }
+}
+
+/* Mobile Grande (600px a 768px) - Ainda mantém 50%/50% com ajustes */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row; /* Força horizontal */
+    }
+    
+    .left-side {
+        flex: 1;
+        width: 50%;
+        padding: 30px 20px;
+    }
+    
+    .right-side {
+        flex: 1;
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .form-wrapper {
+        max-width: 350px;
+    }
+    
+    .theme-toggle-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .logo h2 {
+        font-size: 26px;
+    }
+    
+    .logo span {
+        font-size: 12px;
+    }
+    
+    .logo {
+        margin-bottom: 25px;
+    }
+    
+    .user-type-selector {
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 4px;
+    }
+    
+    .type-btn {
+        padding: 9px;
+        font-size: 12px;
+    }
+    
+    .input-group {
+        margin-bottom: 18px;
+    }
+    
+    .input-group label {
+        font-size: 13px;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .btn-login {
+        padding: 11px;
+        font-size: 14px;
+    }
+    
+    .engineer-image {
+        max-width: 75%;
+    }
+}
+
+/* Mobile (480px a 600px) - Mantém proporção exata */
+@media (max-width: 600px) {
+    .left-side {
+        padding: 25px 15px;
+    }
+    
+    .right-side {
+        padding: 15px;
+    }
+    
+    .form-wrapper {
+        max-width: 300px;
+    }
+    
+    .logo h2 {
+        font-size: 24px;
+    }
+    
+    .logo span {
+        font-size: 11px;
+    }
+    
+    .logo {
+        margin-bottom: 20px;
+    }
+    
+    .user-type-selector {
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+    
+    .type-btn {
+        padding: 8px;
+        font-size: 11px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    .input-group label {
+        font-size: 12px;
+    }
+    
+    .input-group input {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+    
+    .btn-login {
+        padding: 10px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .engineer-image {
+        max-width: 80%;
+    }
+}
+
+/* Mobile pequeno (380px a 480px) - Mantém 50%/50% */
+@media (max-width: 480px) {
+    .left-side {
+        padding: 20px 12px;
+    }
+    
+    .right-side {
+        padding: 12px;
+    }
+    
+    .form-wrapper {
+        max-width: 260px;
+    }
+    
+    .theme-toggle-btn {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .logo h2 {
+        font-size: 22px;
+    }
+    
+    .logo span {
+        font-size: 10px;
+    }
+    
+    .logo {
+        margin-bottom: 18px;
+    }
+    
+    .user-type-selector {
+        gap: 6px;
+        margin-bottom: 15px;
+        padding: 3px;
+    }
+    
+    .type-btn {
+        padding: 7px;
+        font-size: 10px;
+    }
+    
+    .input-group {
+        margin-bottom: 14px;
+    }
+    
+    .input-group label {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+    
+    .input-group input {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+    
+    .btn-login {
+        padding: 9px;
+        font-size: 12px;
+    }
+    
+    .error-message {
+        font-size: 11px;
+        min-height: 30px;
+    }
+    
+    .engineer-image {
+        max-width: 85%;
+    }
+}
+
+/* Mobile muito pequeno (até 380px) - Mantém a divisão exata */
+@media (max-width: 380px) {
+    .left-side {
+        padding: 15px 10px;
+    }
+    
+    .right-side {
+        padding: 10px;
+    }
+    
+    .form-wrapper {
+        max-width: 220px;
+    }
+    
+    .logo h2 {
+        font-size: 20px;
+    }
+    
+    .logo span {
+        font-size: 9px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .user-type-selector {
+        gap: 5px;
+        margin-bottom: 12px;
+    }
+    
+    .type-btn {
+        padding: 6px;
+        font-size: 9px;
+    }
+    
+    .input-group {
+        margin-bottom: 12px;
+    }
+    
+    .input-group label {
+        font-size: 10px;
+    }
+    
+    .input-group input {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+    
+    .btn-login {
+        padding: 8px;
+        font-size: 11px;
+    }
+    
+    .engineer-image {
+        max-width: 90%;
+    }
+}
+
+/* Landscape em mobile - mantém horizontal otimizado */
+@media (max-width: 768px) and (orientation: landscape) {
+    .left-side {
+        padding: 15px 20px;
+        overflow-y: auto;
+    }
+    
+    .right-side {
+        padding: 15px;
+    }
+    
+    .form-wrapper {
+        max-width: 280px;
+    }
+    
+    .logo {
+        margin-bottom: 12px;
+    }
+    
+    .logo h2 {
+        font-size: 22px;
+    }
+    
+    .user-type-selector {
+        margin-bottom: 12px;
+    }
+    
+    .input-group {
+        margin-bottom: 10px;
+    }
+    
+    .btn-login {
+        margin-bottom: 10px;
+    }
+    
+    .engineer-image {
+        max-width: 70%;
+    }
+}
+
+/* Altura muito pequena - ajusta scroll */
+@media (max-height: 600px) {
+    .left-side {
+        overflow-y: auto;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .user-type-selector {
+        margin-bottom: 15px;
+    }
+    
+    .input-group {
+        margin-bottom: 12px;
+    }
+}
+
+/* Previne zoom em inputs no iOS */
+@media (max-width: 768px) {
+    .input-group input {
+        font-size: 16px; /* Previne zoom automático no iOS */
+    }
+}
+
+/* Scroll suave para o conteúdo */
+.left-side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-side::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.left-side::-webkit-scrollbar-thumb {
+    background: #1a3a6e;
+    border-radius: 10px;
+}
+
+.left-side::-webkit-scrollbar-thumb:hover {
+    background: #0d2242;
+}
+
+/* Tema escuro para o scroll */
+.theme-checkbox:checked ~ .container .left-side::-webkit-scrollbar-track {
+    background: #2a3448;
+}
+
+.theme-checkbox:checked ~ .container .left-side::-webkit-scrollbar-thumb {
+    background: #2a5f8a;
+}
+
+/* Garantia de que ambos os lados tenham a mesma altura */
+.left-side, .right-side {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centralização vertical perfeita */
+.left-side > div, .right-side > img {
+    margin: auto;
+}

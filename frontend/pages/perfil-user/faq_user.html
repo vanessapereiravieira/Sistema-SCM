@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SCM - FAQ / Ajuda</title>
+    <link rel="stylesheet" href="../../styles/perfil-admin/home-admin.css">
+    <link rel="stylesheet" href="../../styles/perfil-admin/faq_admin.css">
+    <!-- Font Awesome para ícones modernos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <h2>SCM</h2>
+        <span>Sistema de Controle e Manutenção</span>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="../perfil-user/home_user.html" class="nav-item">Home</a>
+        <a href="../perfil-user/novo_chamado_user.html" class="nav-item">Novo chamado</a>
+        <a href="../perfil-user/meus_chamados_user.html" class="nav-item">Meus chamados</a>
+        <a href="../perfil-user/chamados_encaminhados_user.html" class="nav-item">Chamados enviados</a>
+        <a href="../perfil-user/nova_manutencao_user.html" class="nav-item">Nova manutenção</a>
+        <a href="../perfil-user/minhas_manutencoes_user.html" class="nav-item">Minhas manutenções</a>
+        <a href="../perfil-user/manutencoes_encaminhadas_user.html" class="nav-item">Manutenções enviadas</a>
+        <a href="../perfil-user/sobre_user.html" class="nav-item">Sobre</a>
+        <a href="../perfil-user/faq_user.html" class="nav-item active">FAQ / Ajuda</a>
+    </nav>
+
+    <div class="theme-toggle-wrapper">
+        <button class="theme-toggle-btn" id="themeToggleBtn">
+            Modo
+        </button>
+    </div>
+</div>
+
+<div class="main-content">
+
+    <div class="top-bar">
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="mobile-logo">SCM Admin</div>
+        </div>
+        
+        <button class="profile-btn" id="profileBtn">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                </svg>
+            </div>
+        </button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item logout" id="logoutBtn">
+                Sair
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="content-area">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h1>FAQ / Ajuda</h1>
+                <p>Tire suas dúvidas e encontre ajuda para utilizar o sistema SCM</p>
+            </div>
+
+            <div class="faq-section">
+                <h2><i class="fas fa-info-circle"></i> Sobre o Sistema</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O que é o SCM?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SCM (Sistema de Controle e Manutenções) é uma plataforma completa para gerenciamento de chamados e manutenções, oferecendo agilidade, transparência e organização para empresas de todos os tamanhos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como funciona o modo escuro?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O modo escuro pode ser ativado clicando no botão "Modo" na barra lateral. Isso altera as cores da interface para tons mais escuros, reduzindo o cansaço visual em ambientes com pouca luz. Sua preferência é salva automaticamente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O sistema é responsivo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! O SCM foi desenvolvido para ser totalmente responsivo, funcionando perfeitamente em desktop, tablets e smartphones. Em dispositivos móveis, o menu lateral se transforma em um menu hambúrguer para melhor experiência.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Preciso instalar algum programa para usar o SCM?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! O SCM é um sistema web, acessado diretamente pelo navegador. Basta ter uma conexão com a internet e um navegador atualizado (Chrome, Firefox, Edge ou Safari).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO CHAMADOS -->
+            <div class="faq-section">
+                <h2><i class="fas fa-ticket-alt"></i> Chamados</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como solicitar um novo chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para solicitar um novo chamado, clique em "Novo chamado" no menu lateral. Escolha a categoria adequada, informe o local, descreva o problema ou necessidade e envie a solicitação. Após o envio, o chamado ficará disponível para acompanhamento.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como visualizar meus chamados?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Acesse "Meus chamados" no menu lateral. Lá você encontrará todas as suas solicitações registradas, juntamente com seus respectivos status. Clique em qualquer chamado para visualizar os detalhes completos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual o prazo para conclusão de um chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O prazo pode variar conforme a urgência e a complexidade do atendimento. Chamados de alta urgência recebem prioridade e normalmente são tratados mais rapidamente. O andamento pode ser acompanhado diretamente pelos detalhes do chamado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual a diferença entre os níveis de urgência do chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Baixo:</strong> Serviço sem urgência imediata, podendo ser realizado conforme cronograma.<br>
+                            <strong>Médio:</strong> Necessita atenção em curto prazo para evitar problemas futuros.<br>
+                            <strong>Alto:</strong> Requer intervenção rápida para prevenir falhas ou interrupções das atividades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso cancelar um chamado solicitado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Não.</strong> O sistema não permite o cancelamento de chamados pelos usuários. Após a solicitação, o chamado deverá seguir o fluxo normal até sua conclusão ou encerramento por um administrador.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso editar um chamado após criá-lo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Todos os usuários podem editar um chamado após a criação, desde que ele ainda não tenha sido concluído ou cancelado. A edição permite atualizar informações como descrição, local e categoria do chamado, garantindo que os dados estejam corretos antes ou durante o atendimento.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso excluir um chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Todos os usuários podem excluir um chamado, desde que ele ainda não tenha sido finalizado. Ao excluir, o chamado é removido do sistema e não poderá mais ser acompanhado ou recuperado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como anexar fotos ou documentos em um chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Atualmente, o envio de imagens está disponível apenas para a categoria de Manutenção Preventiva. Para os demais chamados, o sistema não permite anexos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O que significa cada status do chamado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Aberto:</strong> Chamado registrado e aguardando atendimento.<br>
+                            <strong>Em andamento:</strong> Atendimento iniciado pela equipe responsável.<br>
+                            <strong>Concluído:</strong> Solicitação finalizada com sucesso.<br>
+                            <strong>Cancelado:</strong> Chamado encerrado sem execução.<br>
+                            <strong>Excluído:</strong> Chamado removido do fluxo de atendimento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como sei se meu chamado está sendo atendido?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode acompanhar o andamento pela página "Meus Chamados". Quando o atendimento for iniciado pela equipe responsável, o status do chamado será alterado para "Em Andamento".</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso visualizar estatísticas dos chamados?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Usuários podem acompanhar apenas seus próprios chamados. Relatórios, indicadores e estatísticas gerais do sistema ficam disponíveis exclusivamente para administradores.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual a diferença entre chamado e manutenção?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Chamado:</strong> Solicitação de suporte, atendimento ou resolução de problemas relacionados a setores, ambientes ou serviços da instituição.<br>
+                            <strong>Manutenção:</strong> Atividade preventiva ou corretiva voltada à conservação e ao funcionamento adequado de equipamentos, instalações ou infraestrutura.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO MANUTENÇÃO PREVENTIVA -->
+            <div class="faq-section">
+                <h2><i class="fas fa-tools"></i> Manutenção Preventiva</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como cadastrar uma nova manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para cadastrar uma nova manutenção preventiva, clique em "Nova manutenção" no menu lateral. Preencha as informações solicitadas, como local, descrição, data prevista e imagens, se necessário. Após preencher os dados, clique em "Cadastrar" para registrar a manutenção.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como acompanhar o status de uma manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Acesse "Minhas manutenções" no menu lateral. Você verá uma lista com todas as manutenções cadastradas e seus respectivos status, como Aberta, Em andamento, Concluída ou Cancelada. Clique em qualquer manutenção para visualizar mais detalhes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual a diferença entre os níveis de urgência da manutenção?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Baixa:</strong> Serviço sem urgência imediata, podendo ser realizado conforme cronograma.<br>
+                            <strong>Média:</strong> Necessita atenção em curto prazo para evitar problemas futuros.<br>
+                            <strong>Alta:</strong> Requer intervenção rápida para prevenir falhas ou interrupções das atividades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual o prazo para conclusão de uma manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O prazo para conclusão de uma manutenção preventiva pode variar de acordo com a complexidade do serviço, a disponibilidade de recursos e a prioridade definida pela equipe responsável. O andamento da manutenção pode ser acompanhado através da página "Minhas Manutenções", onde o status é atualizado conforme o progresso das atividades.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso cancelar uma manutenção preventiva cadastrada?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Após o cadastro, as manutenções preventivas não podem ser canceladas pelos usuários. Caso a manutenção não seja mais necessária ou tenha sido cadastrada incorretamente, um administrador deverá avaliar a situação e tomar as medidas cabíveis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso editar uma manutenção preventiva após cadastrá-la?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Todos os usuários podem editar uma manutenção preventiva após o cadastro, desde que ela ainda não esteja concluída ou cancelada. Isso permite corrigir informações, atualizar descrições, datas ou detalhes importantes antes da execução.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso excluir uma manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Todos os usuários podem excluir uma manutenção preventiva enquanto ela ainda não estiver finalizada. Após a exclusão, o registro é removido do sistema e não poderá ser recuperado nem acompanhado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O que significa cada status da manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Aberta:</strong> Manutenção registrada e aguardando análise ou início da execução.<br>
+                            <strong>Em Andamento:</strong> A manutenção está sendo realizada pela equipe responsável.<br>
+                            <strong>Concluída:</strong> Os serviços de manutenção foram finalizados com sucesso.<br>
+                            <strong>Cancelada:</strong> A manutenção foi encerrada sem a execução das atividades previstas.<br>
+                            <strong>Excluída:</strong> O registro da manutenção foi removido do sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso anexar imagens na manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. O sistema permite anexar imagens durante o cadastro da manutenção preventiva. As imagens ajudam a documentar o estado atual dos equipamentos, salas ou ambientes que passarão pela manutenção.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Quem pode alterar o status de uma manutenção preventiva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Apenas administradores podem alterar o status de uma manutenção preventiva. Os status disponíveis são: Em Andamento, Concluída e Cancelada.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como sei se minha manutenção preventiva está sendo realizada?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode acompanhar o andamento pela página "Minhas Manutenções". Quando a execução da manutenção for iniciada, o status será alterado para "Em Andamento" por um administrador.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso visualizar estatísticas das manutenções preventivas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Usuários podem acompanhar apenas suas próprias manutenções. Relatórios, indicadores e estatísticas gerais do sistema ficam disponíveis exclusivamente para administradores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2><i class="fas fa-headset"></i> Suporte e Contato</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como entro em contato com o suporte?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode entrar em contato com nosso suporte através do e-mail: suporte@scm.com.br ou pelo telefone (11) 99999-9999. Nosso horário de atendimento é de segunda a sexta, das 8h às 18h.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual o horário de funcionamento do suporte?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nosso suporte funciona de segunda a sexta-feira, das 8h às 18h. Em caso de emergência fora do horário comercial, utilize o canal de emergência disponível no menu "Suporte".</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como posso dar sugestões ou reclamações?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode enviar sugestões através do e-mail: ouvidoria@scm.com.br. Todas as sugestões são analisadas pela nossa equipe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O suporte é gratuito?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! O suporte básico está incluído para todos os usuários do sistema. Para serviços especializados ou consultorias personalizadas, consulte nossa equipe comercial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/perfil-admin/faq_admin.js"></script>
+</body>
+</html>

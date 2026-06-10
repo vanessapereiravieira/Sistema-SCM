@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SCM - Meus Chamados</title>
+    <link rel="stylesheet" href="../../styles/perfil-user/meus_chamados_user.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <h2>SCM</h2>
+        <span>Sistema de Controle e Manutenção</span>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="../perfil-user/home_user.html" class="nav-item">Home</a>
+        <a href="../perfil-user/novo_chamado_user.html" class="nav-item">Novo chamado</a>
+        <a href="../perfil-user/meus_chamados_user.html" class="nav-item active">Meus chamados</a>
+        <a href="../perfil-user/chamados_encaminhados_user.html" class="nav-item">Chamados enviados</a>
+        <a href="../perfil-user/nova_manutencao_user.html" class="nav-item">Nova manutenção</a>
+        <a href="../perfil-user/minhas_manutencoes_user.html" class="nav-item">Minhas manutenções</a>
+        <a href="../perfil-user/manutencoes_encaminhadas_user.html" class="nav-item">Manutenções enviadas</a>
+        <a href="../perfil-user/sobre_user.html" class="nav-item">Sobre</a>
+        <a href="../perfil-user/faq_user.html" class="nav-item">FAQ / Ajuda</a>
+    </nav>
+
+    <div class="theme-toggle-wrapper">
+        <button class="theme-toggle-btn" id="themeToggleBtn">
+            Modo
+        </button>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="top-bar">
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="mobile-logo">SCM</div>
+        </div>
+        
+        <button class="profile-btn" id="profileBtn">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                </svg>
+            </div>
+        </button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item logout" id="logoutBtn">
+                Sair
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="content-area">
+        <div class="chamados-header">
+            <h1>Meus Chamados</h1>
+        </div>
+        
+        <!-- ESTATÍSTICAS RÁPIDAS -->
+        <div class="stats" id="statsContainer"></div>
+        
+        <!-- GRID DE CHAMADOS -->
+        <div id="chamadosGrid" class="chamados-grid"></div>
+    </div>
+</div>
+
+<!-- TOAST DE MENSAGENS -->
+<div id="toastMsg" class="toast-message"></div>
+
+<!-- PRIMEIRO: Carregar o base.js com as funções de estilo -->
+<script src="../../js/funcoes-base/base.js"></script>
+
+<!-- DEPOIS: Carregar o meus_chamados_user.js (NÃO o novo_chamado_user.js) -->
+<script src="../../js/perfil-user/meus_chamados_user.js"></script>
+
+</body>
+</html>
+</body>
+</html>

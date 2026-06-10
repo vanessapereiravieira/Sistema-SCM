@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SCM - Sobre</title>
+    <link rel="stylesheet" href="../../styles/perfil-user/home_user.css">
+    <link rel="stylesheet" href="../../styles/perfil-user/sobre_user.css">
+    <!-- Font Awesome para ícones modernos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <h2>SCM</h2>
+        <span>Sistema de Controle e Manutenção</span>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="../perfil-user/home_user.html" class="nav-item">Home</a>
+        <a href="../perfil-user/novo_chamado_user.html" class="nav-item">Novo chamado</a>
+        <a href="../perfil-user/meus_chamados_user.html" class="nav-item">Meus chamados</a>
+        <a href="../perfil-user/chamados_encaminhados_user.html" class="nav-item">Chamados enviados</a>
+        <a href="../perfil-user/nova_manutencao_user.html" class="nav-item">Nova manutenção</a>
+        <a href="../perfil-user/minhas_manutencoes_user.html" class="nav-item">Minhas manutenções</a>
+        <a href="../perfil-user/manutencoes_encaminhadas_user.html" class="nav-item">Manutenções enviadas</a>
+        <a href="../perfil-user/sobre_user.html" class="nav-item active">Sobre</a>
+        <a href="../perfil-user/faq_user.html" class="nav-item">FAQ / Ajuda</a>
+    </nav>
+
+    <!-- Botão de tema na sidebar -->
+    <div class="theme-toggle-wrapper">
+        <button class="theme-toggle-btn" id="themeToggleBtn">
+            Modo
+        </button>
+    </div>
+</div>
+
+<div class="main-content">
+
+    <!-- BARRA VISUAL -->
+    <div class="top-bar">
+        <!-- Cabeçalho mobile com botão e logo -->
+        <div class="mobile-header">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="mobile-logo">SCM</div>
+        </div>
+        
+        <button class="profile-btn" id="profileBtn">
+            <div class="avatar">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                </svg>
+            </div>
+        </button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item logout" id="logoutBtn">
+                Sair
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para fechar menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- CONTEÚDO - PÁGINA SOBRE -->
+    <div class="content-area">
+        <div class="about-container">
+            <!-- Cabeçalho da página -->
+            <div class="about-header">
+                <h1>SCM</h1>
+                <p>Conheça mais sobre o sistema e como ele pode ajudar sua empresa</p>
+            </div>
+
+            <!-- Missão, Visão e Valores - COM HOVER SUAVE MANTENDO A MESMA COR -->
+            <div class="about-section mission-vision-section">
+                <h2>Nossa Missão</h2>
+                <p class="mission-text">Oferecer uma solução completa e eficiente para gerenciamento de chamados e manutenções, proporcionando agilidade, transparência e organização para empresas de todos os tamanhos.</p>
+                
+                <h2 style="margin-top: 25px;">Nossa Visão</h2>
+                <p class="vision-text">Ser referência nacional em sistemas de gestão de manutenção, reconhecido pela inovação, qualidade e satisfação dos clientes.</p>
+                
+                <h2 style="margin-top: 25px;">Nossos Valores</h2>
+                <div class="values-text">
+                    <p><strong>Compromisso:</strong> Com a excelência no atendimento e na qualidade do serviço.</p>
+                    <p><strong>Inovação:</strong> Buscando constantemente melhorias e novas tecnologias.</p>
+                    <p><strong>Transparência:</strong> Comunicando de forma clara e honesta.</p>
+                    <p><strong>Eficiência:</strong> Otimizando processos e recursos.</p>
+                </div>
+            </div>
+
+            <!-- Funcionalidades - Hover apenas nos cards -->
+            <div class="about-section">
+                <h2>Funcionalidades</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Gestão de Chamados</h3>
+                        <p>Abertura, acompanhamento e histórico completo de todos os chamados.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Controle de Manutenções</h3>
+                        <p>Gerencie manutenções preventivas e corretivas de forma eficiente.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h3>Modo Escuro</h3>
+                        <p>Interface adaptável para maior conforto visual.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsivo</h3>
+                        <p>Acesse de qualquer dispositivo, onde estiver.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tecnologias Utilizadas - Hover apenas nos cards -->
+            <div class="about-section">
+                <h2>Tecnologias Utilizadas</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon html5">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>HTML5</h3>
+                        <p>Estrutura moderna e semântica</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon css3">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS3</h3>
+                        <p>Design responsivo e animações</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon js">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Interatividade e dinamismo</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon mysql">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Banco de Dados MySQL</h3>
+                        <p>Armazenamento seguro e estruturado dos dados</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipe - Hover apenas nos nomes -->
+            <div class="about-section">
+                <h2>Nossa Equipe</h2>
+                <div class="team-container">
+                    <div class="team-names">
+                        <div class="team-name">Back-End - Vanesssa Pereira Vieira Anunciação</div>
+                        <div class="team-name">Front-End - Iedro Lucas dos Santos Firmino</div>
+                        <div class="team-name">Documentação - Maivily Nascimento Ribeiro</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Versão - Sem hover -->
+            <div class="version-info">
+                <h3>SCM</h3>
+                <div class="version-number">Versão 1.0</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/perfil-user/sobre_user.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+📌 SCM - Sistema de Controle e Manutenção
+
+O SCM (Sistema de Controle e Manutenção) é uma aplicação web desenvolvida para centralizar e gerenciar solicitações internas de manutenção dentro de uma empresa. O sistema permite que funcionários registrem chamados e que a equipe administrativa acompanhe, organize e resolva essas demandas de forma eficiente.
+
+---
+
+🚀 Funcionalidades
+
+👤 Usuário
+- Escolher perfil e fazer login
+- Abrir chamados ou manutenções
+- Descrever o problema
+- Acompanhar status dos chamados ou manutenções
+- Visualizar histórico de solicitações
+
+🛠️ Administrador
+- Visualizar todos os chamados e manutenções
+- Alterar status dos chamados (Aberto, Em andamento, Concluído)
+- Alterar status das manutenções (Aberto, Em andamento, Pendente, Cancelado e Concluído)
+- Gerenciar solicitações dos usuários
+- Filtrar chamados e manutenções por prioridade e status
+- Acesso a todas as demandas do sistema
+
+---
+
+🧱 Tecnologias Utilizadas
+
+- Node.js
+- Express.js
+- MySQL / MySQL2
+- Express Session
+- Multer
+- CORS
+- Dotenv
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+
+📁 Estrutura do Projeto
+
+SCM 
+│ 
+├── backend 
+│ ├── config 
+│ ├── middlewares 
+│ ├── node_modules
+│ ├── routes 
+│ ├── server 
+│ ├── uploads 
+│ ├── .env 
+│ ├── .env.example 
+│ ├── .gitignore 
+│ ├──package-lock.json
+│ └──package.json 
+│ 
+├── frontend
+│ ├── images 
+│ ├── js 
+│ ├── pages 
+│ └── styles 
+│ 
+└── README.md
+
+---
+
+
+⚙️ Como executar o projeto
+
+1. Clonar o repositório
+git clone https://github.com/vanessapereiravieira/Sistema-SCM.git
+
+2. Entrar na pasta
+cd scm
+
+3. Instalar dependências
+npm install
+
+4. Configurar variáveis de ambiente
+. Criar arquivo .env baseado no .env.example
+
+5. Iniciar o servidor
+node server.js
+
+---
+
+🔐 Autenticação
+
+O sistema utiliza autenticação simples baseada em localStorage, armazenando os dados do usuário logado no navegador.
+
+---
+
+🎯 Objetivo do Projeto
+
+O SCM foi desenvolvido com foco em praticar conceitos de desenvolvimento web, organização de sistemas e integração entre frontend e backend, simulando um ambiente real de gestão de chamados internos.
+
+---
+
+👨‍💻 Autor
+. Back-End: Vanessa Pereira
+. Front-End: Iedro Lucas
+. Documentação: Maivily Nascimento

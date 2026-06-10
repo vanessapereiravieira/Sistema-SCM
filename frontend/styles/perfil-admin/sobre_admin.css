@@ -1,0 +1,716 @@
+/* Estilos adicionais específicos para a página Sobre */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.about-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Seções com hover suave */
+.about-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Hover suave específico para a seção de Missão, Visão e Valores - MANTÉM A MESMA COR */
+.mission-vision-section {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mission-vision-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Mantém a mesma cor de fundo */
+    background: #f8f9fa;
+}
+
+.about-section h2 {
+    color: #1a3a6e;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Estilos para funcionalidades com ícones - HOVER NOS CARDS */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    background: #e8f0fe;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #1a3a6e;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    color: #0d2242;
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    color: #1a3a6e;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover h3 {
+    color: #0d2242;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover p {
+    color: #333;
+}
+
+/* Container da equipe - SEM HOVER */
+.team-container {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.team-names {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* Hover individual nos nomes */
+.team-name {
+    color: #555;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.team-name:hover {
+    color: #ffffff;
+    background: #0d2242;
+    transform: translateX(10px);
+    padding-left: 20px;
+}
+
+/* Estilos para tecnologias com ícones - HOVER NOS CARDS */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tech-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    background: #e8f0fe;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+    transform: scale(1.1);
+}
+
+.tech-icon.html5 {
+    color: #E44D26;
+}
+
+.tech-icon.css3 {
+    color: #1572B6;
+}
+
+.tech-icon.js {
+    color: #F7DF1E;
+}
+
+.tech-icon.mysql {
+    color: #4479A1;
+}
+
+.tech-card h3 {
+    color: #1a3a6e;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover h3 {
+    color: #0d2242;
+}
+
+.tech-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover p {
+    color: #333;
+}
+
+/* Estilo para os textos de missão, visão e valores */
+.mission-text, .vision-text, .values-text {
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.values-text p {
+    margin-bottom: 8px;
+}
+
+/* Container da versão - SEM HOVER */
+.version-info {
+    background: linear-gradient(135deg, #1a3a6e 0%, #0d2242 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.version-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.version-number {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== MODO ESCURO ========== */
+body.dark-mode .about-section {
+    background: #2a3448;
+}
+
+body.dark-mode .mission-vision-section:hover {
+    /* Mantém a mesma cor de fundo do modo escuro */
+    background: #2a3448;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .about-section h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .about-section p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .mission-text,
+body.dark-mode .vision-text,
+body.dark-mode .values-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode .values-text strong {
+    color: #ffffff;
+}
+
+body.dark-mode .feature-card {
+    background: #1e2a3a;
+}
+
+body.dark-mode .feature-card:hover {
+    background: #2a3a4a;
+}
+
+body.dark-mode .feature-icon {
+    color: #ffffff;
+}
+
+body.dark-mode .feature-card:hover .feature-icon {
+    color: #3a7cb8;
+}
+
+body.dark-mode .feature-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .feature-card:hover h3 {
+    color: #3a7cb8;
+}
+
+body.dark-mode .feature-card p {
+    color: #c0c0c0;
+}
+
+body.dark-mode .feature-card:hover p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .tech-card {
+    background: #1e2a3a;
+}
+
+body.dark-mode .tech-card:hover {
+    background: #2a3a4a;
+}
+
+body.dark-mode .tech-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .tech-card:hover h3 {
+    color: #3a7cb8;
+}
+
+body.dark-mode .tech-card p {
+    color: #c0c0c0;
+}
+
+body.dark-mode .tech-card:hover p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .tech-icon.html5 {
+    color: #E44D26;
+}
+
+body.dark-mode .tech-icon.css3 {
+    color: #1572B6;
+}
+
+body.dark-mode .tech-icon.js {
+    color: #F7DF1E;
+}
+
+body.dark-mode .tech-icon.mysql {
+    color: #4479A1;
+}
+
+body.dark-mode .team-container {
+    background: #1e2a3a;
+}
+
+body.dark-mode .team-name {
+    color: #e0e0e0;
+}
+
+body.dark-mode .team-name:hover {
+    color: #ffffff;
+    background: #0d2242;
+}
+
+body.dark-mode .version-info {
+    background: linear-gradient(135deg, #1a3a6e 0%, #0d2242 100%);
+}
+
+body.dark-mode .version-info h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .version-number {
+    color: #e0e0e0;
+}
+
+body.dark-mode .about-header h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .about-header p {
+    color: #d0d0d0;
+}
+
+/* ========== RESPONSIVIDADE OTIMIZADA ========== */
+
+/* Tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 25px;
+    }
+    
+    .features-grid {
+        gap: 20px;
+    }
+    
+    .tech-grid {
+        gap: 20px;
+    }
+}
+
+/* Mobile Grande (601px a 768px) */
+@media (max-width: 768px) {
+    .about-header {
+        margin-bottom: 30px;
+    }
+    
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .about-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .about-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-section p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+    
+    .feature-card {
+        padding: 20px 15px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+    
+    .tech-card {
+        padding: 20px 15px;
+    }
+    
+    .tech-icon {
+        font-size: 2.5rem;
+    }
+    
+    .tech-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .tech-card p {
+        font-size: 0.85rem;
+    }
+    
+    .team-container {
+        padding: 20px;
+    }
+    
+    .team-name {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+    }
+    
+    .version-info {
+        padding: 25px;
+    }
+    
+    .version-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .version-number {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (481px a 600px) */
+@media (max-width: 600px) {
+    .about-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .about-header p {
+        font-size: 0.9rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .feature-icon {
+        font-size: 2.2rem;
+    }
+    
+    .tech-icon {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile pequeno (321px a 480px) */
+@media (max-width: 480px) {
+    .about-header {
+        margin-bottom: 20px;
+    }
+    
+    .about-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .about-header p {
+        font-size: 0.85rem;
+    }
+    
+    .about-section {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .about-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .about-section p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+    
+    .feature-card {
+        padding: 15px 12px;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+    
+    .tech-card {
+        padding: 15px 12px;
+    }
+    
+    .tech-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .tech-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .tech-card p {
+        font-size: 0.8rem;
+    }
+    
+    .team-container {
+        padding: 15px;
+    }
+    
+    .team-names {
+        gap: 8px;
+    }
+    
+    .team-name {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    
+    .version-info {
+        padding: 20px;
+    }
+    
+    .version-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .version-number {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile muito pequeno (até 320px) */
+@media (max-width: 320px) {
+    .about-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .about-header p {
+        font-size: 0.8rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .about-section p {
+        font-size: 0.8rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.75rem;
+    }
+    
+    .tech-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .tech-card p {
+        font-size: 0.75rem;
+    }
+    
+    .team-name {
+        font-size: 0.8rem;
+    }
+    
+    .version-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .version-number {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape (orientação horizontal) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .about-section {
+        padding: 15px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    
+    .feature-card {
+        padding: 15px;
+    }
+    
+    .tech-card {
+        padding: 15px;
+    }
+}
+
+/* Altura pequena */
+@media (max-height: 600px) {
+    .about-header {
+        margin-bottom: 20px;
+    }
+    
+    .about-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Touch-friendly para mobile (aumenta área de clique) */
+@media (max-width: 768px) {
+    .feature-card, 
+    .tech-card,
+    .team-name {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .feature-card:active,
+    .tech-card:active,
+    .team-name:active {
+        transform: scale(0.98);
+    }
+}
