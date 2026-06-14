@@ -298,7 +298,7 @@ function aplicarFiltroStatus() {
         } else {
             imagemHtml = `
                 <div class="manutencao-imagem">
-                    <span style="color: #999; font-size: 0.85rem;">📷 Nenhuma imagem disponível</span>
+                    <span style="color: #999; font-size: 0.85rem;">Nenhuma imagem disponível</span>
                 </div>
             `;
         }
@@ -325,7 +325,7 @@ function aplicarFiltroStatus() {
         
         let nomeSalaTexto = "";
         if (m.nome_sala) {
-            nomeSalaTexto = "- " + m.nome_sala;
+            nomeSalaTexto = m.nome_sala;
         }
         
         let categoriaTexto = "";
@@ -360,7 +360,7 @@ function aplicarFiltroStatus() {
                     <span>${formatarData(m.criado_em)}</span>
                 </div>
                 <div class="tags-container">
-                    <span class="tag-local">Local: ${localTexto} ${nomeSalaTexto}</span>
+                    <span class="tag-local">Local: ${nomeSalaTexto}</span>
                     <span class="tag-categoria">Categoria: ${categoriaTexto}</span>
                     <span class="tag-periodicidade">Periodicidade: ${getPeriodicidadeText(m.periodicidade)}</span>
                 </div>

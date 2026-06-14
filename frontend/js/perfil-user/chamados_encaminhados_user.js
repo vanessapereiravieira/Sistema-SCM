@@ -157,7 +157,7 @@ function aplicarFiltroStatus() {
                 </div>
                 <div class="chamado-descricao">${c.descricao}</div>
                 <div class="tags-container">
-                    <span class="tag-local">Local: ${c.local}: ${c.nome_sala}</span>
+                    <span class="tag-local">Local: ${c.nome_sala}</span>
                     <span class="tag-categoria">Categoria: ${c.categoria}</span>
                     <span class="tag-destino">Destino: ${c.setor_destino}</span>
                 </div>

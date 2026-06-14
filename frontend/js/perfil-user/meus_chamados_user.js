@@ -259,7 +259,7 @@ function aplicarFiltroStatus() {
                 <div class="chamado-data">${dataFormatada}</div>
                 <div class="chamado-descricao">${c.descricao}</div>
                 <div class="tags-container">
-                    <span class="tag-local">Local: ${c.local}: ${c.nome_sala}</span>
+                    <span class="tag-local">Local: ${c.nome_sala}</span>
                     <span class="tag-categoria">Categoria: ${c.categoria}</span>
                 </div>
                 <div class="card-botoes">
@@ -378,25 +378,6 @@ function editarChamado(id) {
     window.location.href = `novo_chamado_user.html?editar=${id}`;
 }
 
-// ========== LIMPAR HISTÓRICO DE EXCLUÍDOS ==========
-function limparHistoricoExcluidos() {
-    const confirmado = confirm("Tem certeza que deseja limpar todo o histórico de chamados excluídos?");
-    
-    if (confirmado) {
-        contadorExcluidos = 0;
-        chamadosExcluidos = [];
-        localStorage.removeItem('contadorExcluidos');
-        localStorage.removeItem('chamadosExcluidos');
-        mostrarEstatisticas();
-        
-        if (filtroStatusAtual === "Excluído") {
-            aplicarFiltroStatus();
-        }
-        
-        alert("Histórico de excluídos foi limpo!");
-    }
-}
-
 // ========== AGUARDAR DOM CARREGAR ==========
 document.addEventListener('DOMContentLoaded', function() {
     carregarChamados();
@@ -406,4 +387,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.excluirChamado = excluirChamado;
 window.editarChamado = editarChamado;
 window.filtrarPorStatus = filtrarPorStatus;
-window.limparHistoricoExcluidos = limparHistoricoExcluidos;

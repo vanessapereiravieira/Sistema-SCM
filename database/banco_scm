@@ -1,0 +1,132 @@
+-- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: sistema_scm
+-- ------------------------------------------------------
+-- Server version	8.0.45
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `chamados`
+--
+
+DROP TABLE IF EXISTS `chamados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `chamados` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `categoria` varchar(50) NOT NULL,
+  `descricao` text NOT NULL,
+  `local` varchar(50) NOT NULL,
+  `nome_sala` varchar(100) NOT NULL,
+  `urgencia` enum('Baixa','Média','Alta') NOT NULL DEFAULT 'Baixa',
+  `status` enum('Aberto','Em andamento','Concluído','Cancelado','Excluído') NOT NULL DEFAULT 'Aberto',
+  `usuario_id` int NOT NULL,
+  `setor_destino` varchar(50) NOT NULL,
+  `criado_em` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_usuario` (`usuario_id`),
+  CONSTRAINT `fk_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chamados`
+--
+
+LOCK TABLES `chamados` WRITE;
+/*!40000 ALTER TABLE `chamados` DISABLE KEYS */;
+INSERT INTO `chamados` VALUES (1,'Computador da sala não liga','TI','Equipamento da Sala 10 não está iniciando corretamente.','Sala','Sala 10','Alta','Cancelado',1,'TI','2026-06-14 03:17:22'),(2,'Internet instável no laboratório','TI','Conexão caindo no Laboratório de Informática.','Laboratório','Laboratório de Informática','Média','Em andamento',1,'TI','2026-06-14 03:17:22'),(3,'Projetor sem sinal','TI','Projetor da Sala 11 não exibe imagem.','Sala','Sala 11','Alta','Aberto',1,'TI','2026-06-14 03:17:22'),(4,'Cadastro de aluno com erro','NEP','Sistema não salva atualização de cadastro.','Sala','Sala 13','Média','Em andamento',1,'NEP','2026-06-14 03:17:22'),(5,'Declaração pendente','NEP','Solicitação de declaração não foi gerada.','Sala','Sala 14','Baixa','Concluído',1,'NEP','2026-06-14 03:17:22'),(6,'Manutenção de switch de rede','TI','Switch do Laboratório de Informática apresentando falhas.','Laboratório','Laboratório de Informática','Alta','Aberto',2,'TI','2026-06-14 03:17:22'),(7,'Atualização de sistema administrativo','TI','Sistema precisa de atualização urgente.','Sala','Sala 12','Média','Concluído',2,'TI','2026-06-14 03:17:22'),(8,'Impressora com defeito','TI','Impressora da Sala 15 não imprime corretamente.','Sala','Sala 15','Alta','Cancelado',2,'TI','2026-06-14 03:17:22'),(9,'Correção de matrícula em lote','NEP','Erros em matrículas precisam ser corrigidos.','Sala','Sala 13','Alta','Aberto',2,'NEP','2026-06-14 03:17:22'),(10,'Revisão de documentos acadêmicos','NEP','Documentos do NEP precisam ser revisados.','Sala','Sala 14','Baixa','Em andamento',2,'NEP','2026-06-14 03:17:22');
+/*!40000 ALTER TABLE `chamados` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manutencoes_preventivas`
+--
+
+DROP TABLE IF EXISTS `manutencoes_preventivas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `manutencoes_preventivas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `equipamento` varchar(255) NOT NULL,
+  `responsavel` varchar(255) NOT NULL,
+  `local` varchar(50) NOT NULL,
+  `nome_sala` varchar(255) NOT NULL,
+  `categoria` varchar(50) NOT NULL,
+  `periodicidade` varchar(50) NOT NULL,
+  `data_ultima` date NOT NULL,
+  `data_proxima` date NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `urgencia` varchar(20) DEFAULT 'Baixa',
+  `observacoes` text,
+  `imagem` varchar(500) DEFAULT NULL,
+  `usuario_id` int NOT NULL,
+  `setor_destino` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`usuario_id`),
+  CONSTRAINT `manutencoes_preventivas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manutencoes_preventivas`
+--
+
+LOCK TABLES `manutencoes_preventivas` WRITE;
+/*!40000 ALTER TABLE `manutencoes_preventivas` DISABLE KEYS */;
+INSERT INTO `manutencoes_preventivas` VALUES (1,'Computador Dell OptiPlex','Vanessa','Sala','Sala 10','TI','Mensal','2026-05-15','2026-06-15','Aberto','Alta','Verificar desempenho e limpeza interna.',NULL,1,'TI','2026-06-14 02:21:54','2026-06-14 03:09:19'),(2,'Projetor Epson','Vanessa','Sala','Sala 11','TI','Trimestral','2026-03-01','2026-06-01','Em andamento','Média','Inspecionar lâmpada e conexões HDMI.',NULL,1,'TI','2026-06-14 02:21:54','2026-06-14 02:21:54'),(3,'Switch 24 portas','Vanessa','Laboratório','Laboratório de Informática','TI','Semestral','2026-01-10','2026-07-10','Concluído','Baixa','Equipamento funcionando normalmente.',NULL,1,'TI','2026-06-14 02:21:54','2026-06-14 02:21:54'),(4,'Impressora HP LaserJet','Vanessa','Sala','Sala 12','TI','Mensal','2026-05-20','2026-06-20','Pendente','Média','Verificar toner e roletes.',NULL,1,'TI','2026-06-14 02:21:54','2026-06-14 02:21:54'),(5,'Monitor LG 24','Vanessa','Laboratório','Laboratório Maker','TI','Trimestral','2026-04-01','2026-07-01','Cancelado','Baixa','Limpeza preventiva e teste de imagem.',NULL,1,'TI','2026-06-14 02:21:54','2026-06-14 03:09:32'),(6,'Arquivo de Matrículas','Iedro','Sala','Sala 13','NEP','Mensal','2026-05-10','2026-06-10','Aberto','Alta','Organização e atualização documental.',NULL,2,'NEP','2026-06-14 02:21:54','2026-06-14 03:04:58'),(7,'Scanner de Documentos','Iedro','Sala','Sala 14','NEP','Trimestral','2026-03-15','2026-06-15','Em andamento','Média','Verificar alimentação de folhas.',NULL,2,'NEP','2026-06-14 02:21:54','2026-06-14 02:21:54'),(8,'Arquivo Acadêmico','Iedro','Sala','Sala 15','NEP','Semestral','2026-01-01','2026-07-01','Concluído','Baixa','Documentação revisada e organizada.',NULL,2,'NEP','2026-06-14 02:21:54','2026-06-14 02:21:54'),(9,'Computador Atendimento','Iedro','Laboratório','Laboratório de Química','NEP','Mensal','2026-05-25','2026-06-25','Cancelado','Média','Atualização de sistema acadêmico.',NULL,2,'NEP','2026-06-14 02:21:54','2026-06-14 03:05:28'),(10,'Scanner de Protocolos','Iedro','Laboratório','Laboratório de Logística','NEP','Trimestral','2026-03-20','2026-06-20','Pendente','Baixa','Limpeza e calibração do equipamento.',NULL,2,'NEP','2026-06-14 02:21:54','2026-06-14 02:21:54');
+/*!40000 ALTER TABLE `manutencoes_preventivas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
+  `setor` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Vanessa','contato.vanessapereira06@gmail.com','Nessa@06','user','TI'),(2,'Iedro','iedro.santos@ba.estudante.senai.br','iedro@01','admin','NEP');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-06-14  0:39:21

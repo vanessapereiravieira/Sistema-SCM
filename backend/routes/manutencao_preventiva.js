@@ -188,7 +188,7 @@ router.get("/minhas-manutencoes", function(req, res) {
     let params = [];
 
     if (role === 'admin') {
-        // Admin vê todas as manutenções de todos os usuários
+        // Admin (NEP) vê apenas manutenções do setor NEP
         sql = `
             SELECT 
                 m.*, 
@@ -196,7 +196,8 @@ router.get("/minhas-manutencoes", function(req, res) {
                 u.setor AS criador_setor,
                 m.created_at AS criado_em
             FROM manutencoes_preventivas m
-            JOIN usuarios u ON m.usuario_id = u.id
+            INNER JOIN usuarios u ON m.usuario_id = u.id
+            WHERE m.setor_destino = 'NEP'
             ORDER BY 
                 CASE m.urgencia
                     WHEN 'Alta' THEN 1
@@ -216,7 +217,7 @@ router.get("/minhas-manutencoes", function(req, res) {
                 u.setor AS criador_setor,
                 m.created_at AS criado_em
             FROM manutencoes_preventivas m
-            JOIN usuarios u ON m.usuario_id = u.id
+            INNER JOIN usuarios u ON m.usuario_id = u.id
             WHERE m.usuario_id = ?
             ORDER BY 
                 CASE m.urgencia
@@ -233,7 +234,10 @@ router.get("/minhas-manutencoes", function(req, res) {
     db.query(sql, params, function(erro, resultado) {
         if (erro) {
             console.error("Erro ao buscar manutenções:", erro);
-            return res.status(500).json({ mensagem: "Erro ao buscar manutenções" });
+            return res.status(500).json({ 
+                mensagem: "Erro ao buscar manutenções",
+                erro: erro.message 
+            });
         }
         
         res.json(resultado);

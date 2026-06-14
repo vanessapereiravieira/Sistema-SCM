@@ -134,28 +134,11 @@ function gerarImagemFallback(equipamento = "", categoria = "") {
 
     const ctx = canvas.getContext("2d");
     
-    // Fundo gradiente
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, "#e5e7eb");
-    gradient.addColorStop(1, "#d1d5db");
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Ícone de imagem (desenho simples)
-    ctx.fillStyle = "#9ca3af";
-    ctx.font = "40px Arial";
-    ctx.textAlign = "center";
-    ctx.fillText("🖼️", canvas.width/2, canvas.height/2 - 20);
-    
     // Texto
     ctx.fillStyle = "#6b7280";
     ctx.font = "bold 16px Arial";
-    ctx.fillText("Sem Imagem", canvas.width/2, canvas.height/2 + 20);
-    
-    ctx.font = "12px Arial";
-    ctx.fillStyle = "#9ca3af";
-    const textoExibido = equipamento ? equipamento.substring(0, 30) : "Manutenção";
-    ctx.fillText(textoExibido, canvas.width/2, canvas.height/2 + 45);
+    ctx.textAlign = "center";
+    ctx.fillText("Nenhuma imagem disponível", canvas.width/2, canvas.height/2);
 
     return canvas.toDataURL("image/png");
 }
@@ -442,7 +425,7 @@ function aplicarFiltroStatus() {
                 <div class="manutencao-descricao">${m.observacoes || 'Sem observações'}</div>
                 <div class="tags-container">
                     <span class="tag-responsavel">👤 Responsável: ${m.responsavel || 'Não informado'}</span>
-                    <span class="tag-local">Local: ${m.local}: ${m.nome_sala}</span>
+                    <span class="tag-local">Local: ${m.nome_sala}</span>
                     <span class="tag-categoria">Categoria: ${m.categoria}</span>
                     <span class="tag-periodicidade">Período: ${m.periodicidade}</span>
                 </div>
@@ -611,25 +594,6 @@ function editarManutencao(id) {
     window.location.href = `nova_manutencao_user.html?editar=${id}`;
 }
 
-// ========== LIMPAR HISTÓRICO DE EXCLUÍDOS ==========
-function limparHistoricoExcluidos() {
-    const confirmado = confirm("Tem certeza que deseja limpar todo o histórico de manutenções excluídas?");
-    
-    if (confirmado) {
-        contadorExcluidos = 0;
-        manutencoesExcluidas = [];
-        localStorage.removeItem('contadorExcluidosManutencoes');
-        localStorage.removeItem('manutencoesExcluidas');
-        mostrarEstatisticas();
-        
-        if (filtroStatusAtual === "Excluído") {
-            aplicarFiltroStatus();
-        }
-        
-        mostrarMensagem("Histórico de excluídos foi limpo");
-    }
-}
-
 // ========== AGUARDAR DOM CARREGAR ==========
 document.addEventListener('DOMContentLoaded', function() {
     carregarManutencoes();
@@ -639,4 +603,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.excluirManutencao = excluirManutencao;
 window.editarManutencao = editarManutencao;
 window.filtrarPorStatus = filtrarPorStatus;
-window.limparHistoricoExcluidos = limparHistoricoExcluidos;
