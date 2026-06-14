@@ -19,7 +19,7 @@ console.log({
 
 // Verificar se é admin
 if (USUARIO_ROLE !== 'admin') {
-    window.location.href = '../../pages/user/chamados_encaminhados_user.html';
+    window.location.href = '../../pages/perfil-user/nova_manutencao_user.html';
 }
 
 // ========== VARIÁVEIS DO FORMULÁRIO ==========
